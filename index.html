@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Testes Playwright</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    .card { border: 1px solid #ccc; padding: 20px; border-radius: 8px; max-width: 400px; }
+    input, button { padding: 8px; margin-top: 10px; display: block; width: 100%; box-sizing: border-box; }
+    button { background-color: #28a745; color: white; border: none; cursor: pointer; }
+    #mensagem { margin-top: 15px; font-weight: bold; color: green; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1 id="titulo">Login do Aluno</h1>
+    
+    <label for="usuario">Usuário:</label>
+    <input type="text" id="usuario" placeholder="Digite seu usuário">
+    
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" placeholder="Digite sua senha">
+    
+    <button id="btn-entrar">Entrar</button>
+    
+    <p id="mensagem"></p>
+  </div>
+
+  <script>
+    document.getElementById('btn-entrar').addEventListener('click', () => {
+      const usuario = document.getElementById('usuario').value;
+      const senha = document.getElementById('senha').value;
+      const msg = document.getElementById('mensagem');
+
+      if (usuario === 'admin' && senha === '1234') {
+        msg.innerText = 'Login realizado com sucesso!';
+        msg.style.color = 'green';
+      } else {
+        msg.innerText = 'Usuário ou senha incorretos!';
+        msg.style.color = 'red';
+      }
+    });
+  </script>
+
+</body>
+</html>
